@@ -62,6 +62,9 @@ fun GitaliasUI(viewModel : GitaliasViewModel = viewModel() ) {
                 is GitaliasViewModel.GitaliasState.Init -> {
                     Text("Not image yet")
                 }
+                is GitaliasViewModel.GitaliasState.Error -> {
+                    Text("Git user not found")
+                }
                 is GitaliasViewModel.GitaliasState.Successful -> {
                     Text("${state.model.login}")
                     Log.d("calyr","${state.model.avatarUrl}" )
